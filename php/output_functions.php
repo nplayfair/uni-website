@@ -9,6 +9,7 @@ function do_html_header($title)
 			"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 			<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 			<head>
+				<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 				<link rel="stylesheet" type="text/css" href="../css/style.css" />
 				<title><?php echo $title; ?></title>
 			</head>
@@ -66,12 +67,16 @@ function do_html_footer()
 function display_signup_form()
 	{
 		?>
-		<form method='post' action='register_new.php'>
-		<p><label for="username">Username</label> <input type='text' name='username' size='20' /></p>
-		<p><label for="email">Email</label> <input type='text' name='email' size='20' /></p>
-		<p><label for="passwd1">Password</label> <input type='password' name='passwd1' size='20' /></p>
-		<p><label for="passwd2">Confirm</label> <input type='password' name='passwd2' size='20' /></p>
-		<p class="submit"><input type='submit' value='Register' /></p>
+		<form method="post" action="register_new.php">
+		<p><label for="username">Username</label>
+		<input type="text" name="username" id="username" size="20" /></p>
+		<p><label for="email">Email</label>
+		<input type="text" name="email" id="email" size="20" /></p>
+		<p><label for="passwd1">Password</label>
+		<input type="password" name="passwd1" id="passwd1" size="20" /></p>
+		<p><label for="passwd2">Confirm</label>
+		<input type="password" name="passwd2" id="passwd2" size="20" /></p>
+		<p class="submit"><input type="submit" value="Register" /></p>
 		</form>
 		</div>
 		<?php
@@ -81,9 +86,11 @@ function display_signup_form()
 function display_login_form()
 	{
 		?>
-		<form method='post' action='login_process.php'>
-		<p><label for="username">Username</label> <input type='text' name='username' size='16' /></p>
-		<p><label for="password">Password</label> <input type='password' name='password' size='16' /></p>
+		<form method="post" action="login_process.php">
+		<p><label for="username">Username</label>
+		<input type="text" name="username" id="username" size="16" /></p>
+		<p><label for="password">Password</label>
+		<input type="password" name="password" id="password" size="16" /></p>
 		<p class="submit"><input type="submit" value="Login" /></p>
 		</form>
 		</div>
