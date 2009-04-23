@@ -42,7 +42,7 @@ blockquote	{
 	border-left:5px #ff6600 solid;
 	margin-left:1em;
 	padding-left:1em;
-	font-family:"Courier", courier, sans-serif;
+	font-family:"Courier", "Courier New", sans-serif;
 	font-size:0.8em;
 }
 
@@ -71,11 +71,12 @@ ul#navigation	{
 				list-style-image:url('../images/bullet.png');
 				padding-left: 10px;
 				margin-top: 5px;
+				margin-left:0px;
 }
 
 #navigation a	{
 				text-decoration: none;
-				font-family: 'Gill Sans', 'Arial Black', sans-serif;
+				font-family: 'Gill Sans', 'Arial', sans-serif;
 			/*	font-weight: bold;	*/
 				color: red;
 }
@@ -95,11 +96,11 @@ ul#navigation	{
 /* Content Areas */
 
 div#navi	{
-				position: absolute;
 				padding: 5px;
 				margin-right: 3px;
-				float: left;
-				width: 160px;
+				float:left;
+				width:160px;
+				clear:left;
 }
 
 div#maincontent	{
@@ -109,6 +110,7 @@ div#maincontent	{
 	margin-left: 190px;
 	margin-right: 30px;
 	top: 32px;
+	min-height:400px;
 }
 div#footer	{
 	width: 100%;
