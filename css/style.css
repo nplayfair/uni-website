@@ -1,0 +1,160 @@
+/* CSS for Radiohead website by Nick Playfair. Made for Data, Networks and the Web
+assignment 2 */
+
+/* Main */
+
+body 	{
+		background-image: url('../images/bg.png'); background-repeat: repeat;
+		background-color: black;	/* Default colour for browsers not capable of bg images */
+}
+
+p	{
+	color: black; font-family: 'Helvetica', 'Verdana', sans-serif;
+	font-size: 14px;
+}
+
+hr	{
+	background-color:white;
+	color: white;
+	height: 3px;
+}
+
+a img	{
+	border:none;	/* Ensure that image links have no border */
+}
+
+#maincontent a	{
+	color:#ff6600;
+	text-decoration:none;
+	border-bottom: thin dotted navy;
+	font-weight:bold;
+}
+
+p.caption	{
+	text-align:center;
+	font-size:10px;
+}
+p.center	{
+	text-align:center;
+}
+
+blockquote	{
+	border-left:5px #ff6600 solid;
+	margin-left:1em;
+	padding-left:1em;
+	font-family:"Courier", courier, sans-serif;
+	font-size:0.8em;
+}
+
+/* Headers */
+
+h1	{
+	color: white; font-family: 'Bank Gothic', 'Arial Black', 'Arial', sans-serif;
+	font-weight: bold; text-decoration: none; font-size: 46px;
+	padding-left: 8px;
+	margin-bottom: 1px;
+}
+
+h2	{
+	color: black; font-family: 'Georgia', 'Times New Roman', 'Times', serif;
+	font-weight: bold; text-decoration: none; font-size: 18px;
+}
+
+h3	{
+	color: black; font-family: 'Georgia', 'Times New Roman', 'Times', serif;
+	font-weight: bold; text-decoration: none; font-size: 14px;
+}
+
+/* Navigation Links */
+
+ul#navigation	{
+				list-style-image:url('../images/bullet.png');
+				padding-left: 10px;
+				margin-top: 5px;
+}
+
+#navigation a	{
+				text-decoration: none;
+				font-family: 'Gill Sans', 'Arial Black', sans-serif;
+			/*	font-weight: bold;	*/
+				color: red;
+}
+
+/* Uses pseudo elements to make links orange when hovered over */
+
+#navigation a:link		{color: #fff;}
+#navigation a:visited	{color: #fff;}
+#navigation a:hover		{color: #ff6600;}
+#navigation a:active	{color: #fff;}
+
+
+#navigation li	{
+	margin-bottom: 6px;
+}
+
+/* Content Areas */
+
+div#navi	{
+				position: absolute;
+				padding: 5px;
+				margin-right: 3px;
+				float: left;
+				width: 160px;
+}
+
+div#maincontent	{
+	background-color: white;
+	border: 1px black dashed;
+	padding: 5px;
+	margin-left: 190px;
+	margin-right: 30px;
+	top: 32px;
+}
+div#footer	{
+	width: 100%;
+}
+
+/* Footer */
+#footer p	{
+	text-align:center;
+	color: white;
+	font-size: 12px;
+}
+
+/* Image Layout */
+
+#maincontent img.article	{
+	float:right;
+	margin: 3px;
+}
+
+#maincontent img.centre	{
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+
+/* Form Layout */
+
+label 	{
+	width: 5em;
+	text-align:right;
+	float:left;
+	margin-right:0.5em;
+	display:block;
+}
+
+.submit input	{
+	margin-left:5.5em;
+}
+
+/* Table Layout */
+table#discography	{
+	border-collapse:collapse;
+	padding:2px;
+	margin-left:auto;
+	margin-right:auto;
+}
+th	{
+	background-color:#eee;
+}
