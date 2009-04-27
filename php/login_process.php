@@ -32,11 +32,11 @@ try
 		else
 			{
 				//Set session variable to store the logged in users name
-				$_SESSION[valid_user]=$username;
+				$_SESSION['valid_user']=$username;
 				
 				//Print page
 				do_html_header('Success');
-				echo "you are logged in duder" . '</div>';
+				echo "You are now logged in as " . $_SESSION['valid_user'] . '</div>';
 				do_html_footer();
 			}
 	

@@ -1,9 +1,11 @@
 <?php
 
 //Create the site header
-function do_html_header($title)
+function do_html_header($title) //Pass a title to the function which can be used within it
 	{
-		?>
+			//Write DTD and HTML header markup code. Use the $title variable to insert the correct title
+			?>
+			
 			<!DOCTYPE html
 			PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
 			"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -28,7 +30,7 @@ function do_html_header($title)
 					</ul>
 				</div>
 				<div id="maincontent">
-			<?php if($title)
+			<?php if($title)	//if a title is passed to the function, output it inside an h2 tag.
 				do_html_heading($title);
 	}
 //Print the header
@@ -42,6 +44,7 @@ function do_html_heading($heading)
 //Create the footer
 function do_html_footer()
 	{
+		//Closes all tags from the header and adds the copyright and validation links to the bottom of the page.
 		?>
 			<hr />
 			<div id="footer">
@@ -66,6 +69,8 @@ function do_html_footer()
 //Create the signup form
 function display_signup_form()
 	{
+		//For accessibility reasons, the labels are all properly assigned to the input fields. This allows users to click the label with the mouse and the input will be selected
+		//ready for writing text into.
 		?>
 		<form method="post" action="register_new.php">
 		<p><label for="username">Username</label>
@@ -85,6 +90,7 @@ function display_signup_form()
 //Create the login form
 function display_login_form()
 	{
+		//All labels correctly assigned as per XHTML guidelines
 		?>
 		<form method="post" action="login_process.php">
 		<p><label for="username">Username</label>
@@ -96,6 +102,55 @@ function display_login_form()
 		</div>
 		<?php
 	}
+
+//List all users
+function list_users()
+	{
+	//connect to DB
+	$con = db_connect();
+	$selected_db = mysql_select_db("u08124275",$con);
+
+	//test if DB selected
+	if (!$selected_db)
+		{
+		die('Can\'t use DB: ' . mysql_error());
+		}
+
+//Generate query to select every user from the database and put them into an array
+$result = mysql_query("SELECT * FROM rhusers");
+
+//Iterate through the array, printing a table with a user in each row
+echo '	<table border="1" cellpadding="4">
+		<tr>
+			<th>Username</th>
+			<th>Email Address</th>
+			<th>Receiving Newsletter</th>
+		</tr>';	//Start table
+
+while($row = mysql_fetch_array($result))
+	{
+		//Add a row to the table for each user
+		echo '<tr><td>'. $row['username'] . '</td><td>' . $row['email'] . '</td><td>' . $row['newsletter'] . '</td></tr>';
+	}
+//Finish table HTML markup
+echo '</table>';
+
+	}
+	
+//Create the administrator page
+function display_admin_page()
+	{
+	do_html_header('Administration');	//Print title
+	list_users();	//Print the list of users table
+	echo '</div>';	//Close main content div
+	do_html_footer();	//Print footer
+	
+	}
+	
+	
+	
+	
+	
 	
 //Take a link and name as arguments and output an html link
 	function do_html_url($url, $name)
