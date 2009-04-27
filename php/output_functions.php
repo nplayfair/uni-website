@@ -122,6 +122,7 @@ $result = mysql_query("SELECT * FROM rhusers");
 //Iterate through the array, printing a table with a user in each row
 echo '	<table border="1" cellpadding="4">
 		<tr>
+			<th>User ID</th>
 			<th>Username</th>
 			<th>Email Address</th>
 			<th>Receiving Newsletter</th>
@@ -130,7 +131,7 @@ echo '	<table border="1" cellpadding="4">
 while($row = mysql_fetch_array($result))
 	{
 		//Add a row to the table for each user
-		echo '<tr><td>'. $row['username'] . '</td><td>' . $row['email'] . '</td><td>' . $row['newsletter'] . '</td></tr>';
+		echo '<tr><td>'. $row['userid'] . '</td><td>' . $row['username'] . '</td><td>' . $row['email'] . '</td><td>' . 				$row['newsletter'] . '</td></tr>';
 	}
 //Finish table HTML markup
 echo '</table>';
