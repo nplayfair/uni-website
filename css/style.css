@@ -42,7 +42,7 @@ blockquote	{
 	border-left:5px #ff6600 solid;
 	margin-left:1em;
 	padding-left:1em;
-	font-family:"Courier", "Courier New", sans-serif;
+	font-family:"Courier", "Courier New", courier, sans-serif;
 	font-size:0.8em;
 }
 
