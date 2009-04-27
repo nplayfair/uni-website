@@ -146,16 +146,3 @@ function display_admin_page()
 	do_html_footer();	//Print footer
 	
 	}
-	
-	
-	
-	
-	
-	
-//Take a link and name as arguments and output an html link
-	function do_html_url($url, $name)
-	{
-	?>
-	  <br /><a href="<?php echo $url;?>"><?php echo $name;?></a><br />
-	<?php
-	}
