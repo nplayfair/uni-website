@@ -41,9 +41,10 @@ else
 	//A regular user is logged in
 	do_html_header('Member Options');	//Print title
 	//If options have been sent by the form, update the database and inform user
-	if ($_POST['newsletter'])
+	if (isset($_POST['newsletter']))
 		{
-		echo '<p style="color:red;">Options updated.</p>
+		options_update($_POST['newsletter'], $_SESSION['valid_user']);
+		echo '<p style="color:red;">Options updated.</p>';
 		}
 	
 	display_options_page(); //run the options page function
