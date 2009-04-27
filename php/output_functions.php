@@ -147,3 +147,55 @@ function display_admin_page()
 	do_html_footer();	//Print footer
 	
 	}
+	
+//Create the members options page
+function display_options_page()
+	{
+	//Perform query to discover current newsletter preferences
+	//connect to DB
+	$con = db_connect();
+	$selected_db = mysql_select_db("u08124275",$con);
+
+	//test if DB selected
+	if (!$selected_db)
+		{
+		die('Can\'t use DB: ' . mysql_error());
+		}
+
+//Generate query to select every user from the database and put them into an array
+//create local variable with logged in username
+$validuser = $_SESSION['valid_user'];
+$result = mysql_query("SELECT newsletter FROM rhusers WHERE username='$validuser'");
+
+//Set newsletter preference variable based on database value
+$newsletterpref = mysql_fetch_row($result);
+
+//Print table with checkbox to change newsletter prefs
+echo '<form method="post" action="member.php">
+	<table border="1" cellpadding="4">
+		<tr>
+			<th colspan="2">Options</th>
+		</tr>
+		<tr>
+			<td><label for="newsletter">Receive Newsletter</label></td>
+			<td>';
+			//Insert checkbox, selected if value is 1, deselected if 0
+			if ($newsletterpref[0] = 1)
+				{
+				echo '<input id="newsletter" name="newsletter" type="checkbox" checked="checked" />
+				</td>';
+				}
+			else
+				{
+				echo '<input id="newsletter" name="newsletter" type="checkbox" />
+				</td>';
+				}
+			echo '</tr></table><br />
+			<input type="submit" value="Submit" />
+			</form></div>';
+
+//Unset validuser local var
+unset($validuser);
+	
+	}
+	

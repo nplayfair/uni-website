@@ -39,7 +39,14 @@ if ($_SESSION['valid_user'] == 'admin')
 else
 	{
 	//A regular user is logged in
-	//display_options_page(); //run the options page function
+	do_html_header('Member Options');	//Print title
+	//If options have been sent by the form, update the database and inform user
+	if ($_POST['newsletter'])
+		{
+		echo '<p style="color:red;">Options updated.</p>
+		}
+	
+	display_options_page(); //run the options page function
 	do_html_footer();	//display footer
 	}
 

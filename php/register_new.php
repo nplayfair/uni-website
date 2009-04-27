@@ -52,8 +52,7 @@
 	
 			//Inform of successful registration and show link to member page
 			do_html_header('Sucessful Registration');
-			echo 'You have sucessfully registered an account. Go to the members page to set your newsletter 
-				prerferences.';
+			echo 'You have sucessfully registered an account. Go to the <a href="member.php" title="Members">members</a> page to set your newsletter prerferences.';
 			do_html_url('member.php', 'Go to the members page');
 			//Close div
 			echo '</div>';

@@ -37,7 +37,7 @@ function register($username, $email, $password)
 		return true;
 }
 
-
+//Login
 function login($username, $password)
 	{
 		//connect to DB
@@ -66,5 +66,30 @@ function login($username, $password)
 		
 	}
 
-//end file
+//Update user options
+function options_update($news, $username)
+		{
+		//connect to DB
+		$con = db_connect();
+		$selected_db = mysql_select_db("u08124275",$con);
+
+		//test if DB selected
+		if (!$selected_db)
+			{
+				die('Can\'t use DB: ' . mysql_error());
+			}
+		//Generate query to update options
+		$sql="UPDATE rhusers
+		SET newsletter='$news' WHERE username='$username'";
+		
+		//run query, returning error if it doesn't work
+		if (!mysql_query($sql,$con))    
+			{       
+			die('Error: ' . mysql_error());    
+			}
+		else	
+			return true;
+		
+		}
+	
 ?>
