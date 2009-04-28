@@ -16,11 +16,11 @@ require_once('news_functions.php');
 	<hr />
 	<div id="navi">
 		<ul id="navigation">
-			<li><a href="index.html">HOME</a></li>
-			<li><a href="history.html">HISTORY</a></li>
-			<li><a href="members.html">MEMBERS</a></li>
-			<li><a href="discography.html">DISCOGRAPHY</a></li>
-			<li><a href="links.html">LINKS</a></li>
+			<li><a href="../index.html">HOME</a></li>
+			<li><a href="../history.html">HISTORY</a></li>
+			<li><a href="../members.html">MEMBERS</a></li>
+			<li><a href="../discography.html">DISCOGRAPHY</a></li>
+			<li><a href="../links.html">LINKS</a></li>
 			<li><strong><a href="#">NEWSLETTER</a></strong></li>
 		</ul>
 	</div>

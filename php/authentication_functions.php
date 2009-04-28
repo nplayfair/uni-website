@@ -1,5 +1,9 @@
 <?php
+//Contains functions that are used to autheticate users against the information held in the database
+
 require_once('database_functions.php');
+
+
 function register($username, $email, $password)
 //register the user into the database
 //returns true or error message

@@ -1,4 +1,5 @@
 <?php
+//Contains functions that output HTML code
 
 //Create the site header
 function do_html_header($title) //Pass a title to the function which can be used within it
@@ -204,4 +205,3 @@ echo '<form method="post" action="member.php">
 unset($validuser);
 	
 	}
-	
