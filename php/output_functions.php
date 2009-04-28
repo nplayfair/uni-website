@@ -143,7 +143,9 @@ function display_admin_page()
 	{
 	do_html_header('Administration');	//Print title
 	list_users();	//Print the list of users table
-	echo '</div>';	//Close main content div
+	echo '
+	<p><a href="logout.php" title="log out">Log out</a></p>
+	</div>';	//Close main content div
 	do_html_footer();	//Print footer
 	
 	}
@@ -179,20 +181,24 @@ echo '<form method="post" action="member.php">
 		<tr>
 			<td><label for="newsletter">Receive Newsletter</label></td>
 			<td>';
-			//Insert checkbox, selected if value is 1, deselected if 0
+			//Insert radio buttons
 			if ($newsletterpref[0] = 1)
 				{
-				echo '<input id="newsletter" name="newsletter" type="checkbox" checked="checked" />
+				echo '<input id="newsletter" name="newsletter" value="1" type="radio" checked="checked" />Yes<br />
+				<input id="newsletter" name="newsletter" value="0" type="radio" />No
 				</td>';
 				}
 			else
 				{
-				echo '<input id="newsletter" name="newsletter" type="checkbox" />
+				echo '<input id="newsletter" name="newsletter" value="1" type="radio" />Yes<br />
+				<input id="newsletter" name="newsletter" value="0" type="radio" checked="checked" />No
 				</td>';
 				}
 			echo '</tr></table><br />
 			<input type="submit" value="Submit" />
-			</form></div>';
+			</form>
+			<p><a href="logout.php" title="log out">Log out</a></p>
+			</div>';
 
 //Unset validuser local var
 unset($validuser);

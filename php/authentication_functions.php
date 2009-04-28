@@ -78,6 +78,13 @@ function options_update($news, $username)
 			{
 				die('Can\'t use DB: ' . mysql_error());
 			}
+		//Set news variable to 1 if the box was checked, else set to zero
+		if ($news == 'on')
+			{
+			$news = 1;
+			}
+		else
+			$news = 0;
 		//Generate query to update options
 		$sql="UPDATE rhusers
 		SET newsletter='$news' WHERE username='$username'";

@@ -44,7 +44,7 @@ else
 	if (isset($_POST['newsletter']))
 		{
 		options_update($_POST['newsletter'], $_SESSION['valid_user']);
-		echo '<p style="color:red;">Options updated.</p>';
+		echo '<p style="color:red;">Options updated. .....</p>' . $_POST['newsletter'];
 		}
 	
 	display_options_page(); //run the options page function
