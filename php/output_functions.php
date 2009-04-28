@@ -131,7 +131,7 @@ echo '	<table border="1" cellpadding="4">
 while($row = mysql_fetch_array($result))
 	{
 		//Add a row to the table for each user
-		echo '<tr><td>'. $row['userid'] . '</td><td>' . $row['username'] . '</td><td>' . $row['email'] . '</td><td>' . 				$row['newsletter'] . '</td></tr>';
+		echo '<tr><td>'. $row['userid'] . '</td><td>' . $row['username'] . '</td><td>' . $row['email'] . '</td><td>' . 	$row['newsletter'] . '</td></tr>';
 	}
 //Finish table HTML markup
 echo '</table>';
@@ -182,7 +182,7 @@ echo '<form method="post" action="member.php">
 			<td><label for="newsletter">Receive Newsletter</label></td>
 			<td>';
 			//Insert radio buttons
-			if ($newsletterpref[0] = 1)
+			if ($newsletterpref[0] == 1)
 				{
 				echo '<input id="newsletter" name="newsletter" value="1" type="radio" checked="checked" />Yes<br />
 				<input id="newsletter" name="newsletter" value="0" type="radio" />No
